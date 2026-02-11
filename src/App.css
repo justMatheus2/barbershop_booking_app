@@ -1,42 +1,216 @@
 #root {
-  max-width: 1280px;
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.hero,
+.content-section,
+.cta-band {
+  width: min(1120px, 92%);
   margin: 0 auto;
-  padding: 2rem;
+}
+
+.hero {
+  padding: 5rem 0 3rem;
+}
+
+.eyebrow {
+  color: #c9a24d;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+
+.hero h1,
+.section-head h1,
+.section-head h2,
+.cta-band h2 {
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  max-width: 15ch;
+}
+
+.hero-copy {
+  max-width: 58ch;
+  color: #cacaca;
+}
+
+.hero-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: #c9a24d;
+  color: #111;
+}
+
+.btn-secondary {
+  border: 1px solid #c9a24d;
+  color: #c9a24d;
+}
+
+.hero-highlights,
+.steps-grid,
+.services-grid,
+.testimonial-grid,
+.contact-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-highlights,
+.steps-grid,
+.services-grid,
+.contact-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.testimonial-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.highlight-card,
+.step-card,
+.service-card,
+.testimonial-card,
+.contact-grid article,
+.booking-shell {
+  background: #161616;
+  border: 1px solid #282828;
+  border-radius: 14px;
+  padding: 1.2rem;
+}
+
+.highlight-card h3 {
+  font-size: 1.4rem;
+}
+
+.highlight-card p,
+.step-card p,
+.testimonial-card p,
+.service-card p,
+.contact-grid p,
+.booking-shell p,
+.about-layout p {
+  color: #cfcfcf;
+}
+
+.section-head {
+  margin-bottom: 1rem;
+}
+
+.content-section {
+  padding: 2rem 0;
+}
+
+.step-card span {
+  color: #c9a24d;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.service-card strong {
+  color: #c9a24d;
+  font-size: 1.25rem;
+}
+
+.inline-cta {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.about-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.booking-shell {
+  display: grid;
+  gap: 1rem;
+}
+
+.booking-shell form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.booking-shell input[type="text"],
+.booking-shell input[type="email"],
+.booking-shell input[type="date"] {
+  margin-top: 0.4rem;
+  width: 100%;
+  background: #0f0f0f;
+  color: #f5f5f5;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  padding: 0.7rem;
+}
+
+.booking-shell label {
+  font-weight: 600;
+}
+
+.booking-shell ul {
+  padding-left: 1rem;
+}
+
+.cta-band {
+  margin: 3rem auto 4rem;
   text-align: center;
+  background: linear-gradient(120deg, #181818, #202020);
+  border: 1px solid #2d2d2d;
+  border-radius: 18px;
+  padding: 2.2rem 1.2rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.cta-band p {
+  color: #d0d0d0;
+  margin-bottom: 1.2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.site-footer {
+  border-top: 1px solid #262626;
+  padding: 1.4rem 0 2rem;
+}
+
+.site-footer p {
+  color: #8f8f8f;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 3.4rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

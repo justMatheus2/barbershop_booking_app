@@ -7,7 +7,9 @@ function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        <h2 className="logo">IronCut Barber</h2>
+        <Link to="/" className="logo" onClick={() => setOpen(false)}>
+          IronCut Barber
+        </Link>
 
         <nav className={`nav ${open ? "open" : ""}`}>
           <Link to="/" onClick={() => setOpen(false)}>Home</Link>
@@ -19,7 +21,11 @@ function Header() {
           </Link>
         </nav>
 
-        <button className="menu-btn" onClick={() => setOpen(!open)}>
+        <button
+          className="menu-btn"
+          onClick={() => setOpen(!open)}
+          aria-label="Open navigation menu"
+        >
           ☰
         </button>
       </div>
