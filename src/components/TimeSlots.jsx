@@ -25,11 +25,11 @@ function TimeSlots({ selectedTime, onSelect, unavailableTimes }) {
               style={{
                 padding: "0.5rem 1rem",
                 cursor: isUnavailable ? "not-allowed" : "pointer",
-                background: isUnavailable ? "#eee" : "transparent",
-                color: isUnavailable ? "#999" : "#000",
+                background: isUnavailable ? "#eee" : "#999",
+                color: isUnavailable ? "#999" : "#eee",
                 border:
                   selectedTime === time
-                    ? "2px solid #000"
+                    ? "3px solid #c9a24d"
                     : "1px solid #ccc",
               }}
             >

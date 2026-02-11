@@ -34,10 +34,10 @@ function ServiceSelector({ selectedServices, onChange }) {
                 type="checkbox"
                 checked={checked}
                 onChange={() => toggleService(service)}
-                style={{ marginRight: "0.5rem" }}
+                style={{ marginRight: "0.5rem", accentColor: "#c9a24d" }}
               />
 
-              <strong>{service.name}</strong> — {service.duration} · {service.price}
+              <strong>{service.name}</strong> — {service.duration} min · €{service.price}
             </label>
           );
         })}
