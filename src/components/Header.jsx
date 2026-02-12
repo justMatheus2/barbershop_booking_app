@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import ironcutLogo from "../assets/ironcut-logo.svg";
+import ironcutLogo from "../assets/logo_transparente.png";
 
 function Header() {
   const [open, setOpen] = useState(false);
