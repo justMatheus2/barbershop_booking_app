@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import ironcutLogo from "../assets/ironcut-logo.svg";
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -8,7 +9,8 @@ function Header() {
     <header className="header">
       <div className="header-container">
         <Link to="/" className="logo" onClick={() => setOpen(false)}>
-          IronCut Barber
+          <img src={ironcutLogo} alt="IronCut Barber logo" className="logo-icon" />
+          <span>IronCut Barber</span>
         </Link>
 
         <nav className={`nav ${open ? "open" : ""}`}>
