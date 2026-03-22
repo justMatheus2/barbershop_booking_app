@@ -14,7 +14,7 @@ function Services() {
           <article key={service.id} className="service-card">
             <h3>{service.name}</h3>
             <p>{service.duration} min</p>
-            <strong>€{service.price}</strong>
+            <strong>EUR {service.price}</strong>
           </article>
         ))}
       </div>

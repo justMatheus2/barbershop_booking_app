@@ -1,12 +1,12 @@
 function DatePicker({ selectedDate, onChange }) {
   return (
-    <div style={{ marginBottom: "1.5rem" }}>
-      <label>Date</label>
-      <br />
+    <div className="booking-field">
+      <label htmlFor="booking-date">Date</label>
       <input
+        id="booking-date"
         type="date"
         value={selectedDate}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(event) => onChange(event.target.value)}
       />
     </div>
   );

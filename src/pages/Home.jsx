@@ -23,6 +23,34 @@ const testimonials = [
   },
 ];
 
+const galleryPhotos = [
+  {
+    src: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=80",
+    alt: "Skin fade haircut with sharp lineup",
+    label: "Skin fade",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=900&q=80",
+    alt: "Textured crop haircut styled forward",
+    label: "Textured crop",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=80",
+    alt: "Pompadour haircut with volume on top",
+    label: "Pompadour",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80",
+    alt: "Buzz cut with beard detailing",
+    label: "Buzz and beard",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1519500528352-2d1460418d41?auto=format&fit=crop&w=900&q=80",
+    alt: "Classic taper haircut with side part",
+    label: "Classic taper",
+  },
+];
+
 function Home() {
   return (
     <>
@@ -72,6 +100,22 @@ function Home() {
 
       <section className="content-section">
         <div className="section-head">
+          <p className="eyebrow">Gallery</p>
+          <h2>Five fresh cut references to showcase the shop style.</h2>
+        </div>
+
+        <div className="gallery-grid">
+          {galleryPhotos.map((photo) => (
+            <figure key={photo.label} className="gallery-card">
+              <img src={photo.src} alt={photo.alt} loading="lazy" />
+              <figcaption>{photo.label}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-section">
+        <div className="section-head">
           <p className="eyebrow">Client feedback</p>
           <h2>Trusted by locals who come back every month.</h2>
         </div>
@@ -79,7 +123,7 @@ function Home() {
         <div className="testimonial-grid">
           {testimonials.map((testimonial) => (
             <article key={testimonial.name} className="testimonial-card">
-              <p>“{testimonial.text}”</p>
+              <p>"{testimonial.text}"</p>
               <strong>{testimonial.name}</strong>
             </article>
           ))}

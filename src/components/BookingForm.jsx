@@ -13,6 +13,7 @@ function BookingForm() {
   const [time, setTime] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [showConfirm, setShowConfirm] = useState(false);
 
   const unavailableTimes = date ? bookedSlots[date] || [] : [];
 
@@ -24,14 +25,15 @@ function BookingForm() {
     name.trim().length > 1 &&
     email.includes("@");
 
-  const totalPrice = services.reduce((sum, s) => sum + s.price, 0);
-  const totalDuration = services.reduce((sum, s) => sum + s.duration, 0);
+  const totalPrice = services.reduce((sum, service) => sum + service.price, 0);
+  const totalDuration = services.reduce((sum, service) => sum + service.duration, 0);
 
-  const [showConfirm, setShowConfirm] = useState(false);
+  function handleSubmit(event) {
+    event.preventDefault();
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (!isValid) return;
+    if (!isValid) {
+      return;
+    }
 
     setShowConfirm(true);
   }
@@ -41,13 +43,13 @@ function BookingForm() {
 
     alert(
       `Booking confirmed!\n\nServices: ${services
-        .map((s) => s.name)
-        .join(", ")}\nTotal: €${totalPrice}\nDuration: ${totalDuration} min`,
+        .map((service) => service.name)
+        .join(", ")}\nTotal: EUR ${totalPrice}\nDuration: ${totalDuration} min`,
     );
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="booking-form" onSubmit={handleSubmit}>
       <ServiceSelector selectedServices={services} onChange={setServices} />
       <DatePicker selectedDate={date} onChange={setDate} />
       <TimeSlots
@@ -85,7 +87,7 @@ function BookingForm() {
         totalDuration={totalDuration}
       />
 
-      <button type="submit" disabled={!isValid}>
+      <button type="submit" className="booking-submit" disabled={!isValid}>
         Confirm Booking
       </button>
     </form>

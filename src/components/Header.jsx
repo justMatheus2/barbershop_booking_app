@@ -5,31 +5,61 @@ import ironcutLogo from "../assets/logo_transparente.png";
 function Header() {
   const [open, setOpen] = useState(false);
 
+  function closeMenu() {
+    setOpen(false);
+  }
+
+  function toggleMenu() {
+    setOpen((current) => !current);
+  }
+
   return (
     <header className="header">
       <div className="header-container">
-        <Link to="/" className="logo" onClick={() => setOpen(false)}>
+        <button
+          type="button"
+          className="menu-btn"
+          onClick={toggleMenu}
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <Link to="/" className="logo" onClick={closeMenu}>
           <img src={ironcutLogo} alt="IronCut Barber logo" className="logo-icon" />
           <span>IronCut Barber</span>
         </Link>
 
-        <nav className={`nav ${open ? "open" : ""}`}>
-          <Link to="/" onClick={() => setOpen(false)}>Home</Link>
-          <Link to="/services" onClick={() => setOpen(false)}>Services</Link>
-          <Link to="/about" onClick={() => setOpen(false)}>About</Link>
-          <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
-          <Link to="/booking" className="cta" onClick={() => setOpen(false)}>
+        <nav id="mobile-navigation" className={`nav ${open ? "open" : ""}`}>
+          <button
+            type="button"
+            className="nav-close"
+            onClick={closeMenu}
+            aria-label="Close navigation menu"
+          >
+            X
+          </button>
+
+          <Link to="/" onClick={closeMenu}>
+            Home
+          </Link>
+          <Link to="/services" onClick={closeMenu}>
+            Services
+          </Link>
+          <Link to="/about" onClick={closeMenu}>
+            About
+          </Link>
+          <Link to="/contact" onClick={closeMenu}>
+            Contact
+          </Link>
+          <Link to="/booking" className="cta" onClick={closeMenu}>
             Book Now
           </Link>
         </nav>
-
-        <button
-          className="menu-btn"
-          onClick={() => setOpen(!open)}
-          aria-label="Open navigation menu"
-        >
-          ☰
-        </button>
       </div>
     </header>
   );

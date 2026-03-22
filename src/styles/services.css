@@ -1,0 +1,31 @@
+.services-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.service-card {
+  background: #161616;
+  border: 1px solid #282828;
+  border-radius: 14px;
+  padding: 1.2rem;
+}
+
+.service-card p {
+  color: #cfcfcf;
+}
+
+.service-card strong {
+  color: #c9a24d;
+  font-size: 1.25rem;
+}
+
+.inline-cta {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

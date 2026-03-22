@@ -9,17 +9,17 @@ function Contact() {
       <div className="contact-grid">
         <article>
           <h3>Address</h3>
-          <p>📍 Cork, Ireland</p>
+          <p>Cork, Ireland</p>
         </article>
 
         <article>
           <h3>Phone</h3>
-          <p>📞 +353 00 000 0000</p>
+          <p>+353 00 000 0000</p>
         </article>
 
         <article>
           <h3>Email</h3>
-          <p>✉️ contact@ironcutbarber.ie</p>
+          <p>contact@ironcutbarber.ie</p>
         </article>
       </div>
     </section>

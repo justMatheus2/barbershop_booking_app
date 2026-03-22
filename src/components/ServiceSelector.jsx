@@ -2,42 +2,41 @@ import servicesData from "../data/services";
 
 function ServiceSelector({ selectedServices, onChange }) {
   function toggleService(service) {
-    const exists = selectedServices.find((s) => s.id === service.id);
+    const exists = selectedServices.find((selectedService) => selectedService.id === service.id);
 
     if (exists) {
-      onChange(selectedServices.filter((s) => s.id !== service.id));
-    } else {
-      onChange([...selectedServices, service]);
+      onChange(selectedServices.filter((selectedService) => selectedService.id !== service.id));
+      return;
     }
+
+    onChange([...selectedServices, service]);
   }
 
   return (
-    <div style={{ marginBottom: "1.5rem" }}>
-      <label>Services</label>
+    <div className="booking-field">
+      <label className="booking-field-legend">Services</label>
 
-      <div style={{ marginTop: "0.75rem" }}>
+      <div className="service-options">
         {servicesData.map((service) => {
-          const checked = selectedServices.some((s) => s.id === service.id);
+          const checked = selectedServices.some((selectedService) => selectedService.id === service.id);
 
           return (
             <label
               key={service.id}
-              style={{
-                display: "block",
-                padding: "0.75rem",
-                marginBottom: "0.5rem",
-                border: checked ? "2px solid #000" : "1px solid #ccc",
-                cursor: "pointer",
-              }}
+              className={`service-option ${checked ? "is-selected" : ""}`}
             >
               <input
                 type="checkbox"
                 checked={checked}
                 onChange={() => toggleService(service)}
-                style={{ marginRight: "0.5rem", accentColor: "#c9a24d" }}
               />
 
-              <strong>{service.name}</strong> — {service.duration} min · €{service.price}
+              <span className="service-option-text">
+                <strong>{service.name}</strong>
+                <span className="service-option-meta">
+                  {service.duration} min · EUR {service.price}
+                </span>
+              </span>
             </label>
           );
         })}

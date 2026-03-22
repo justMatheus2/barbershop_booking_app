@@ -9,7 +9,7 @@ function Booking() {
       </div>
 
       <div className="booking-shell">
-        <p>
+        <p className="booking-note">
           Select your services, choose the handiest day and time, and review
           everything before you confirm.
         </p>

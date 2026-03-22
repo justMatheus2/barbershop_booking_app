@@ -5,7 +5,14 @@ import Services from "./pages/Services";
 import Booking from "./pages/Booking";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import "./App.css";
+import "./styles/base.css";
+import "./styles/layout.css";
+import "./styles/home.css";
+import "./styles/services.css";
+import "./styles/about.css";
+import "./styles/contact.css";
+import "./styles/booking.css";
+import "./styles/booking-form.css";
 import "./styles/header.css";
 
 function App() {
@@ -25,7 +32,7 @@ function App() {
 
       <footer className="site-footer">
         <section>
-          <p>© {new Date().getFullYear()} IronCut Barber, Cork. Quality cuts, no fuss.</p>
+          <p>(c) {new Date().getFullYear()} IronCut Barber, Cork. Quality cuts, no fuss.</p>
         </section>
       </footer>
     </div>
