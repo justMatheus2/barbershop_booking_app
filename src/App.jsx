@@ -32,7 +32,7 @@ function App() {
 
       <footer className="site-footer">
         <section>
-          <p>(c) {new Date().getFullYear()} IronCut Barber, Cork. Quality cuts, no fuss.</p>
+          <p>(c) {new Date().getFullYear()} IronCut Barber. Quality cuts, no fuss.</p>
         </section>
       </footer>
     </div>

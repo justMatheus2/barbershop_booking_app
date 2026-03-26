@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import GallerySlider from "../components/GallerySlider";
 
 const highlights = [
   { title: "12+ years", text: "of premium grooming experience" },
@@ -104,14 +105,7 @@ function Home() {
           <h2>Five fresh cut references to showcase the shop style.</h2>
         </div>
 
-        <div className="gallery-grid">
-          {galleryPhotos.map((photo) => (
-            <figure key={photo.label} className="gallery-card">
-              <img src={photo.src} alt={photo.alt} loading="lazy" />
-              <figcaption>{photo.label}</figcaption>
-            </figure>
-          ))}
-        </div>
+        <GallerySlider photos={galleryPhotos} />
       </section>
 
       <section className="content-section">
